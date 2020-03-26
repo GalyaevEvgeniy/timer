@@ -125,16 +125,11 @@
 				
 				return result;
 			},
-			hoursDifferent() {
-				return this.dateEnd.getHours() - this.$store.state.date.now.getHours();
-			},
 			hours() {
 				let result = "";
-				const DIFFERENT = this.hoursDifferent >= 0 ?
-					this.hoursDifferent :
-					24 + this.hoursDifferent;
+				const DIFFERENT = Math.floor(Math.floor(this.secondsDifferent / 60 / 60) % 24);
 				
-				if (DIFFERENT !== 0) {
+				if (DIFFERENT > 0) {
 					switch (DIFFERENT) {
 						case 1: {
 						}
@@ -288,7 +283,7 @@
 			background-repeat   : no-repeat;
 			background-position : center;
 			
-			&:hover{ transform : scale(1.1) }
+			&:hover{ transform : scale(1.1); }
 		}
 		
 		&__time-is-up{
