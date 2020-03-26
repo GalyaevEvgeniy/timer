@@ -283,7 +283,8 @@
 			transition          : $transition;
 			background-size     : $size;
 			background-color    : transparent;
-			background-image    : url("/img/icons/trash.svg");
+			background-image    : url("/timer/dist/img/icons/trash.svg"); // For github pages
+			/*background-image    : url("/img/icons/trash.svg");*/
 			background-repeat   : no-repeat;
 			background-position : center;
 			
