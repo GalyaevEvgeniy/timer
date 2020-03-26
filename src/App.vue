@@ -64,7 +64,12 @@
 				const JSON_TIMERS = window.localStorage.getItem("timers");
 				const TIMERS = JSON_TIMERS && JSON.parse(JSON_TIMERS);
 				
-				if (TIMERS.length < 3) {
+				if (!JSON_TIMERS){
+					this.isShowAddTimerModal = true;
+					return;
+				}
+				
+				if (TIMERS && TIMERS.length < 3) {
 					this.isShowAddTimerModal = true;
 				} else {
 					alert("Максимум 3 таймера");
